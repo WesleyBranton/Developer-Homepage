@@ -1,0 +1,17 @@
+{
+    "title": "Digital Eye Strain Prevention Tool",
+    "description": "Color Copy is one of my two attempts at producing a simple Android game released under the publisher Clothesline Interactive. The app creates a random colour using RGB values and the player attempts to match the colour by increasing the amount of red, green and blue on their pallet. They cannot remove colour. When they think they have created a close enough match to the colour, they are given a score based on their accuracy.",
+    "links": [
+        {
+            "title": "View Add-on",
+            "url": "https://addons.mozilla.org/firefox/addon/eye-strain-prevention-tool/"
+        },
+        {
+            "title": "Source Code",
+            "url": "https://github.com/WesleyBranton/Digital-Eye-Strain-Prevention-Tool"
+        }
+    ],
+    "images": [
+        "img/screenshot/digitaleyestrainprevention.png"
+    ]
+}

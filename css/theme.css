@@ -1,0 +1,444 @@
+:root {
+    --project-item-width: 100%;
+    --project-item-height: 60vw;
+    --nav-border-width: 5px;
+    --popup-width: 100vw;
+    --popup-height: 100vh;
+    --popup-margin: 0;
+
+    --color-dark: #222;
+    --color-white: #EEE;
+    --color-light: #555;
+    --color-accent: gold;
+
+    --down-icon: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="context-fill" d="M6 9a1 1 0 0 1-.707-.293l-3-3a1 1 0 0 1 1.414-1.414L6 6.586l2.293-2.293a1 1 0 0 1 1.414 1.414l-3 3A1 1 0 0 1 6 9z"></path></svg>');
+}
+
+@media only screen and (min-width: 700px) {
+    :root {
+        --project-item-width: 50%;
+        --project-item-height: 25vw;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    :root {
+        --project-item-width: 25%;
+        --project-item-height: 15vw;
+        --popup-width: 750px;
+        --popup-height: calc(100vh - var(--popup-margin) - var(--popup-margin));
+        --popup-margin: 1em;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-size: 14pt;
+}
+
+section > h2 {
+    text-align: center;
+}
+
+section > h3,
+.project-show-container label,
+section > p {
+    text-align: center;
+    font-weight: normal;
+    color: var(--color-light);
+}
+
+section > p {
+    line-height: 1.5;
+    width: 90%;
+    max-width: 800px;
+    text-align: left;
+    font-size: 110%;
+    margin: auto;
+}
+
+section > p {
+    margin: auto;
+}
+
+#project-list {
+    list-style: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#project-list > li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: var(--project-item-width);
+    height: var(--project-item-height);
+    background-image: url(https://placeholder.com/wp-content/uploads/2019/06/lorem-ipsum.png);
+    background-size: 150px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: ease all .5s;
+}
+
+#project-list > li:hover {
+    background-size: 200px;
+}
+
+#project-list > li .project-desc {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    background: rgba(0, 0, 0, .6);
+    text-align: center;
+    height: 0;
+    overflow: hidden;
+    transition: ease all .5s;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+
+#project-list > li:hover .project-desc {
+    height: 100%;
+}
+
+.project-desc h3 {
+    margin: 0 0 .2em 0;
+    font-size: 150%;
+    padding: 0;
+}
+
+.project-desc h4 {
+    margin: 0 0 1em 0;
+    font-weight: normal;
+}
+
+.project-desc a {
+    text-decoration: none;
+    color: var(--color-accent);
+    border: 2px solid var(--color-accent);
+    padding: .5rem 2rem;
+    margin: 0 auto;
+    border-radius: 10000px;
+    transition: ease all .25s;
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: 0 100%;
+    background-image: url(../img/button-bg.jpg);
+    font-weight: bold;
+}
+
+.project-desc a:hover {
+    background-size: 100% 100%;
+    color: black;
+}
+
+nav {
+    background: var(--color-dark);
+    position: sticky;
+    top: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-white);
+    display: inline-block;
+    padding: .5em 1em;
+    border-top: var(--nav-border-width) solid var(--color-dark);
+    border-bottom: var(--nav-border-width) solid var(--color-dark);
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--color-accent);
+    border-bottom: var(--nav-border-width) solid var(--color-accent);
+}
+
+nav a:first-of-type {
+    margin-left: 4em;
+}
+
+header {
+    height: 100vh;
+}
+
+footer {
+    background: var(--color-dark);
+    color: var(--color-white);
+    text-align: center;
+    padding: 1em .5em;
+    font-size: 75%;
+}
+
+footer p {
+    margin: 0;
+    padding: 0;
+}
+
+#popup {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, .6);
+    z-index: 220;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+#popup > .popup {
+    background: white;
+    width: 100%;
+    max-width: var(--popup-width);
+    max-height: var(--popup-height);
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: var(--popup-margin) auto var(--popup-margin) auto;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.popup .button-container {
+    text-align: right;
+}
+
+.popup .button-container a,
+form button {
+    color: black;
+    font-weight: bold;
+    background: var(--color-accent);
+    text-decoration: none;
+    padding: .5em 1em;
+    border-radius: 1000px;
+    margin: 0 .2em;
+    border: none;
+    cursor: pointer;
+}
+
+.popup .button-container a:first-of-type {
+    margin-left: 0;
+}
+
+.popup .button-container a:last-of-type {
+    margin-right: 0;
+}
+
+#popup > .popup .image-container img {
+    width: 100%;
+}
+
+#project-list > li {
+    display: none;
+}
+
+#project-list.all > li,
+#project-list.addon > .addon,
+#project-list.android > .android,
+#project-list.website > .website,
+#project-list.game > .game {
+    display: inline !important;
+}
+
+#popup.loading > .popup,
+#popup.done > .loader {
+    display: none;
+}
+
+.loader {
+    height: 100vh;
+    margin: auto;
+    padding: 0;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    width: max-content;
+}
+
+#spinner {
+    border: 16px solid transparent;
+    border-radius: 50%;
+    border-top: 16px solid var(--color-accent);
+    width: 120px;
+    height: 120px;
+    animation: spin .5s linear infinite;
+  }
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+header .wrapper .profile img {
+    border-radius: 1000px;
+    width: 80%;
+    max-width: 300px;
+    margin: auto;
+}
+
+header {
+    overflow: hidden;
+    position: relative;
+}
+
+header video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: rotate(180deg);
+}
+
+header .wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .4);
+}
+
+header .wrapper .profile {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+header .wrapper h1 {
+    color: white;
+    margin: 0;
+    padding: 0;
+    font: normal 500% "Arial Narrow", Arial, sans-serif;
+}
+
+header .wrapper h2 {
+    color: white;
+    margin: 0;
+    padding: 0;
+    font: normal 200% "Arial Narrow", Arial, sans-serif;
+}
+
+.spacer {
+    flex: 1;
+}
+
+.project-show-container {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+#project-show {
+    text-align: center;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-image: var(--down-icon);
+    background-position: left calc(100% - 8px) bottom 50%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    padding-right: 24px;
+    border: none;
+    border-bottom: 2px solid var(--color-accent);
+    font-size: 100%;
+}
+
+header {
+    background: black;
+}
+
+header .bottom {
+    position: absolute;
+    left: 0;
+    background-image: var(--down-icon);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: invert();
+    height: 50px;
+    width: 100%;
+    animation: bobbing .5s alternate ease infinite;
+}
+
+@keyframes bobbing {
+  0% { bottom: 0; opacity: 1; }
+  100% { bottom: 1em; opacity: .8; }
+}
+
+#closePopup {
+    color: var(--color-light);
+    font-weight: bold;
+    font-size: 150%;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+#closePopup:hover {
+    color: red;
+}
+
+.toolbar {
+    text-align: right;
+}
+
+form input,
+form textarea {
+    border: 2px solid var(--color-dark);
+}
+
+form label,
+form input,
+form textarea {
+    font-size: 105%;
+    padding: .2em .5em;
+    box-sizing: border-box;
+}
+
+form input {
+    text-align: center;
+}
+
+form textarea {
+    width: 100%;
+    height: 200px;
+    resize: none;
+}
+
+form {
+    width: 90%;
+    max-width: 800px;
+    margin: auto auto 1em auto;
+    padding: 0;
+}
+
+form div {
+    display: flex;
+    margin-bottom: .5em;
+}
+
+form div input {
+    flex: 1;
+}
+
+form article {
+    text-align: right;
+}
+
+form button {
+    font-size: 100%;
+}

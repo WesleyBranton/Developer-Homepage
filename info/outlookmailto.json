@@ -1,0 +1,17 @@
+{
+    "title": "Outlook.com Mailto",
+    "description": "This browser add-on brings support for the Outlook.com and Office 365 webmail platform to Firefox. While the browser only natively supports email links to Yahoo or Gmail, this add-on allows users to send emails directly from an Outlook.com or Office 365 email address when clicking on an email link (mailto).",
+    "links": [
+        {
+            "title": "View Add-on",
+            "url": "https://addons.mozilla.org/firefox/addon/outlook-com-mailto/"
+        },
+        {
+            "title": "Source Code",
+            "url": "https://github.com/WesleyBranton/Outlook.com-mailto"
+        }
+    ],
+    "images": [
+        "img/screenshot/outlookmailto.png"
+    ]
+}

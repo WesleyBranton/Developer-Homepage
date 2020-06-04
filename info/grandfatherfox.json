@@ -1,0 +1,17 @@
+{
+    "title": "Grandfather Fox",
+    "description": "Grandfather Fox is a simple Firefox browser add-on that brings the chimes of a grandfather clock to Firefox. Users can set the volume and style of chime that's played every hour. While it's mainly just a fun project, it can also help people that find themselves losing track of time and spending far too much time on the internet.",
+    "links": [
+        {
+            "title": "View Add-on",
+            "url": "https://addons.mozilla.org/firefox/addon/grandfather-fox/"
+        },
+        {
+            "title": "Source Code",
+            "url": "https://github.com/WesleyBranton/Grandfather-Fox"
+        }
+    ],
+    "images": [
+        "img/screenshot/grandfatherfox.png"
+    ]
+}

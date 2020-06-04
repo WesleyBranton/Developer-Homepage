@@ -1,0 +1,17 @@
+{
+    "title": "Website Blocker",
+    "description": "Website Blocker is a simple website filtering browser add-on designed to work in Firefox. It allows users to disable access to specific websites without the need to configure group policies on their system.",
+    "links": [
+        {
+            "title": "View Add-on",
+            "url": "https://addons.mozilla.org/firefox/addon/the-website-blocker/"
+        },
+        {
+            "title": "Source Code",
+            "url": "https://github.com/WesleyBranton/Website-Blocker"
+        }
+    ],
+    "images": [
+        "img/screenshot/websiteblocker.png"
+    ]
+}

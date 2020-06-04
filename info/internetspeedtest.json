@@ -1,0 +1,13 @@
+{
+    "title": "Internet Speedtest",
+    "description": "This Android app was created to be a lightweight internet speedtest application published under the Clothesline Interactive publisher. Unlike other speedtest apps that download a large amount of data with each test, my app downloads only a single image file that's just 5MB in size each time you run a test. The app was also designed with additional input devices (like Android TV box remotes) in mind.",
+    "links": [
+        {
+            "title": "View App",
+            "url": "https://play.google.com/store/apps/details?id=com.clotheslinedigital.speedtest"
+        }
+    ],
+    "images": [
+        "img/screenshot/internetspeedtest.png"
+    ]
+}

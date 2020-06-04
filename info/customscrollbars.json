@@ -1,0 +1,17 @@
+{
+    "title": "Custom Scrollbars",
+    "description": "Custom Scrollbars is a free browser add-on for the Firefox browser that allows users to customize the appearance of the scrollbars using Firefox's limited scrollbars CSS support.",
+    "links": [
+        {
+            "title": "View Add-on",
+            "url": "https://addons.mozilla.org/firefox/addon/custom-scrollbars/"
+        },
+        {
+            "title": "Source Code",
+            "url": "https://github.com/WesleyBranton/Custom-Scrollbar"
+        }
+    ],
+    "images": [
+        "img/screenshot/customscrollbars.png"
+    ]
+}

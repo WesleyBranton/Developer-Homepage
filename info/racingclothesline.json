@@ -1,0 +1,13 @@
+{
+    "title": "Racing Clothesline",
+    "description": "Racing Clothesline is my personal blog that I started in 2014 to share news and opinions about my favourite motorsport: Formula One. It uses the Wordpress CMS and uses a fully designed custom theme that I designed from scratch. On the website, I'm fortunate enough to have a media relationship with every team and to have conducted interviews with drivers on a few occasions. In 2019, the website was expanded to cover the new W Series, a female-only motorsport series.",
+    "links": [
+        {
+            "title": "View Website",
+            "url": "https://racingclothesline.com"
+        }
+    ],
+    "images": [
+        "img/screenshot/racingclothesline.png"
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "title": "SUMO Live Helper",
+    "description": "SUMO Live Helper is a browser add-on designed for volunteers of Mozilla. It was created by a Mozilla contributor as a utility to monitor new support questions and notify volunteers, helping to increase the responsiveness of the community. I joined the project in 2019, helping to completely rewrite the add-on. I also implemented a number of features and optimizations as well as support for Firefox's Android browser.",
+    "links": [
+        {
+            "title": "View Add-on",
+            "url": "https://addons.mozilla.org/firefox/addon/sumo-live-helper-/"
+        },
+        {
+            "title": "Source Code",
+            "url": "https://github.com/mozillabrasil/sumo_live_helper"
+        }
+    ],
+    "images": [
+        "img/screenshot/sumolivehelper.png"
+    ]
+}

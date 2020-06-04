@@ -1,0 +1,17 @@
+{
+    "title": "Transportation Idle Tycoon",
+    "description": "Temperature Converter is a browser add-on that helps users easily convert temperatures into their desired unit. The user simply highlights the temperature that they want to convert and the add-on will add the new temperature directly onto the page. The add-on was also recently expanded to automatically scan loaded websites for temperatures that can automatically be converted.",
+    "links": [
+        {
+            "title": "View Add-on",
+            "url": "https://addons.mozilla.org/firefox/addon/transportation-idle-tycoon/"
+        },
+        {
+            "title": "Source Code",
+            "url": "https://github.com/WesleyBranton/Transportation-Idle-Tycoon"
+        }
+    ],
+    "images": [
+        "img/screenshot/transportationidletycoon.png"
+    ]
+}

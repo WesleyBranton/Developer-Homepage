@@ -1,0 +1,17 @@
+{
+    "title": "Facebook Like Hider",
+    "description": "I designed this Firefox browser add-on originally just for myself to stop notifications about \"likes\" received on my posts and comments from appearing in my Facebook notifications feed. When I discovered that other people wanted the same functionality, I released the add-on to the public. It has since been expanded to allow users to hide the \"like\" counter and \"like\" buttons. This helps to combat social media addiction and it's a feature that Facebook has implemented itself on other platforms like Instagram.",
+    "links": [
+        {
+            "title": "View Add-on",
+            "url": "https://addons.mozilla.org/firefox/addon/like-hider/"
+        },
+        {
+            "title": "Source Code",
+            "url": "https://github.com/WesleyBranton/Facebook-Like-Hider"
+        }
+    ],
+    "images": [
+        "img/screenshot/facebooklikehider.png"
+    ]
+}

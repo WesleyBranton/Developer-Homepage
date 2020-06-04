@@ -1,0 +1,17 @@
+{
+    "title": "Cash Counter",
+    "description": "Cash Counter is a free browser add-on for the Firefox browser that is designed to help people working in a retail setting to count and keep track of their cash. The add-on includes a counter to assist people in rolling coins and functionality that allows them to print a copy of the information for their records.",
+    "links": [
+        {
+            "title": "View Add-on",
+            "url": "https://addons.mozilla.org/firefox/addon/cash-counter/"
+        },
+        {
+            "title": "Source Code",
+            "url": "https://github.com/WesleyBranton/Cash-Counter"
+        }
+    ],
+    "images": [
+        "img/screenshot/cashcounter.png"
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "title": "ColTap",
+    "description": "Color Copy is one of my two attempts at producing a simple Android game released under the publisher Clothesline Interactive. The app creates a random colour using RGB values and the player attempts to match the colour by increasing the amount of red, green and blue on their pallet. They cannot remove colour. When they think they have created a close enough match to the colour, they are given a score based on their accuracy.",
+    "links": [
+        {
+            "title": "View App",
+            "url": "https://play.google.com/store/apps/details?id=com.clotheslinedigital.testlayouts"
+        }
+    ],
+    "images": [
+        "img/screenshot/coltap.png"
+    ]
+}

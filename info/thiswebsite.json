@@ -1,0 +1,13 @@
+{
+    "title": "This Website",
+    "description": "I hope it doesn't come as too much of a shock when I say that the website you are looking at right now was designed by... me. It's hosted on GitHub Pages as a place to showcase my past and present projects for anyone who's interested, including potential employers (like yourself 😉). Because GitHub Pages doesn't support PHP or SQL, dynamic content is loaded using AJAX to read JSON files hosted on GitHub.",
+    "links": [
+        {
+            "title": "Source Code",
+            "url": "https://github.com/WesleyBranton/Developer-Homepage"
+        }
+    ],
+    "images": [
+        "img/screenshot/thiswebsite.png"
+    ]
+}
