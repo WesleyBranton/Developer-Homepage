@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="css/theme.css">
+		<link rel="icon" type="image/jpg" href="img/me.jpg">
 
         <!-- SEO -->
         <meta name="title" content="Wesley Branton">
@@ -26,12 +27,13 @@
                 "nationality": "Canada"
             }
         </script>
+        <script src='https://www.google.com/recaptcha/api.js'></script>
     </head>
     <body>
         <!-- Page header -->
         <header>
-            <video autoplay muted loop id="myVideo">
-                <source src="img/background2.mp4" type="video/mp4">
+            <video autoplay muted loop>
+                <source src="img/background.mp4" type="video/mp4">
                 Your browser does not support HTML5 video.
             </video>
 
@@ -240,7 +242,7 @@
         <!-- Contact page -->
         <section id="contact">
             <h2>Contact Me</h2>
-            <form>
+            <form id="form-contact" action="https://send.wesleybranton.com/send.php" method="POST">
                 <div>
                     <label>Name:</label>
                     <input type="text" name="name" placeholder="Jane Doe" required>
@@ -255,10 +257,20 @@
                 <div>
                     <textarea name="message" minlength="50" placeholder="Type your message here..." required></textarea>
                 </div>
+                <div class="g-recaptcha" data-sitekey="6LfFfqMZAAAAADSBLD3f9hPEmwvy50pGmJ6yYytR"></div>
                 <article>
-                    <button type="submit">Send</button>
+                    <button type="submit" id="send-button"><div id="minispinner"></div><span>Send</span></button>
                 </article>
             </form>
+            <div id="send-success" class="hide status">
+                <b>Your message was sent successfully!</b><br>
+                I will reply to your message as soon as possible.
+            </div>
+            <div id="send-fail" class="hide status">
+                <b>Your message could not be sent!</b><br>
+                <span id="send-fail-reason">Recaptcha issue</span><br>
+                <span id="send-fail-error">Error code</span>
+            </div>
         </section>
 
         <!-- Page footer -->

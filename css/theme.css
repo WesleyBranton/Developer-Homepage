@@ -78,7 +78,6 @@ section > p {
     box-sizing: border-box;
     width: var(--project-item-width);
     height: var(--project-item-height);
-    background-image: url(https://placeholder.com/wp-content/uploads/2019/06/lorem-ipsum.png);
     background-size: 150px;
     background-position: center;
     background-repeat: no-repeat;
@@ -298,7 +297,6 @@ header video {
     position: absolute;
     top: 0;
     right: 0;
-    transform: rotate(180deg);
 }
 
 header .wrapper {
@@ -441,4 +439,49 @@ form article {
 
 form button {
     font-size: 100%;
+    width: 150pt;
+    max-width: 90%;
 }
+
+form button:enabled #minispinner,
+form button:disabled span {
+    display: none !important;
+}
+
+form .g-recaptcha {
+    margin: auto;
+    width: max-content;
+}
+
+.hide {
+    display: none !important;
+}
+
+.status {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto 1em auto;
+    padding: 1em 2em;
+    box-sizing: border-box;
+}
+
+#send-success {
+    background: #9DE1AF;
+    border-left: 1em solid #36B056;
+}
+
+#send-fail {
+    background: #F6A9A2;
+    border-left: 1em solid #E93F2F;
+}
+
+#minispinner {
+    border: 2pt solid transparent;
+    border-radius: 50%;
+    border-top: 2pt solid black;
+    box-sizing: border-box;
+    width: 14pt;
+    height: 14pt;
+    margin: auto;
+    animation: spin .5s linear infinite;
+  }

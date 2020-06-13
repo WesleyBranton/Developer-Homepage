@@ -19,7 +19,7 @@ function openPopup(key) {
 
     // Start AJAX request
     const request = new XMLHttpRequest();
-    const url = 'https://wesleybranton.github.io/Developer-Homepage/info/' + key + '.json';
+    const url = 'info/' + key + '.json';
     request.open('GET', url, true);
     request.responseType = 'json';
     request.onload = createPopup;
@@ -78,7 +78,64 @@ function closePopup() {
     popup.style.display = 'none';
 }
 
+/**
+ * Send email
+ */
+function sendMessage() {
+    // Update UI
+    const banner = document.getElementById('send-fail');
+    banner.classList.add('hide');
+
+    document.getElementById('send-button').disabled = true;
+
+    // Start AJAX request
+    const request = new XMLHttpRequest();
+    const data = `name=${document.getElementsByName('name')[0].value}&email=${document.getElementsByName('email')[0].value}&message=${document.getElementsByName('message')[0].value}&g-recaptcha-response=${document.getElementsByName('g-recaptcha-response')[0].value}`;
+    const url = 'https://send.wesleybranton.com/send.php';
+    request.open('POST', url, true);
+    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    request.onload = function() {
+        if (request.status == 200) return messageSuccess();
+        return messageFail(request.status);
+    };
+    request.send(data);
+}
+
+/**
+ * Handle successful email sent
+ */
+function messageSuccess() {
+    const form = document.getElementById('form-contact');
+    const banner = document.getElementById('send-success');
+    form.parentNode.removeChild(form);
+    banner.classList.remove('hide');
+}
+
+/**
+ * Handle failed email sent
+ * @param {number} status 
+ */
+function messageFail(status) {
+    const banner = document.getElementById('send-fail');
+    let error;
+
+    if (status == 401) error = 'reCAPTCHA check failed';
+    else if (status == 403) error = 'Bad request';
+    else if (status == 500) error = 'Server error';
+
+    document.getElementById('send-fail-reason').textContent = error;
+    document.getElementById('send-fail-error').textContent = `Error code ${status}`;
+
+    banner.classList.remove('hide');
+    document.getElementById('send-button').disabled = false;
+}
+
 // Add event listeners
 document.getElementById('project-show').value = 'all';
 document.getElementById('project-show').addEventListener('change', updateProjects);
 document.getElementById('closePopup').addEventListener('click', closePopup);
+document.getElementById('form-contact').addEventListener('submit', (e) => {
+    e.preventDefault();
+    sendMessage();
+    return false;
+});
