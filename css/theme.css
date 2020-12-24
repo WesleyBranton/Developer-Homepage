@@ -484,4 +484,25 @@ form .g-recaptcha {
     height: 14pt;
     margin: auto;
     animation: spin .5s linear infinite;
-  }
+}
+
+#social {
+    display: flex;
+    width: 30%;
+    margin: .7em auto;
+    padding: 0;
+}
+
+#social li {
+    flex: 1;
+    list-style: none;
+    margin: .5em;
+}
+
+#social img {
+    transition: .2s ease all;
+}
+
+#social img:not(:hover) {
+    filter: brightness(0%);
+}
