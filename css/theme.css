@@ -211,7 +211,7 @@ footer p {
     overflow-y: auto;
     overflow-x: hidden;
     margin: var(--popup-margin) auto var(--popup-margin) auto;
-    padding: 1em;
+    padding: 0 1em 1em 1em;
     box-sizing: border-box;
 }
 
@@ -395,21 +395,27 @@ header .bottom {
 }
 
 #closePopup {
-    color: var(--color-light);
+    color: red;
     font-weight: bold;
     font-size: 150%;
     border: none;
     background: none;
     cursor: pointer;
+    min-width: 44px;
+    min-height: 44px;
+    box-sizing: border-box;
 }
 
 #closePopup:hover,
 #closePopup:focus {
-    color: red;
+    color: var(--color-white);
+    background: red;
 }
 
 .toolbar {
     text-align: right;
+    margin-bottom: 1em;
+    margin-right: -1em;
 }
 
 form input,
