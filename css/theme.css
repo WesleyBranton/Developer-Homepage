@@ -84,7 +84,8 @@ section > p {
     transition: ease all .5s;
 }
 
-#project-list > li:hover {
+#project-list > li:hover,
+#project-list > li.expand {
     background-size: 200px;
 }
 
@@ -104,7 +105,8 @@ section > p {
     color: white;
 }
 
-#project-list > li:hover .project-desc {
+#project-list > li:hover .project-desc,
+#project-list > li.expand .project-desc {
     height: 100%;
 }
 

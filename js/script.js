@@ -130,6 +130,22 @@ function messageFail(status) {
     document.getElementById('send-button').disabled = false;
 }
 
+/**
+ * Trigger project hover when project button is focused
+ * @param {Object} event 
+ */
+function expandProject(event) {
+    event.target.parentNode.parentNode.classList.add('expand');
+}
+
+/**
+ * Clear project hover when project button is unfocused
+ * @param {Object} event 
+ */
+function collapseProject(event) {
+    event.target.parentNode.parentNode.classList.remove('expand');
+}
+
 // Add event listeners
 document.getElementById('project-show').value = 'all';
 document.getElementById('project-show').addEventListener('change', updateProjects);
@@ -139,3 +155,8 @@ document.getElementById('form-contact').addEventListener('submit', (e) => {
     sendMessage();
     return false;
 });
+let projectLinks = document.querySelectorAll('.project-desc > a');
+for (l of projectLinks) {
+    l.addEventListener('focus', expandProject);
+    l.addEventListener('blur', collapseProject);
+}
