@@ -134,6 +134,10 @@ section > p {
     background-size: 0 100%;
     background-image: url(../img/button-bg.jpg);
     font-weight: bold;
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 .project-desc a:hover,
@@ -221,11 +225,16 @@ form button {
     font-weight: bold;
     background: var(--color-accent);
     text-decoration: none;
+    text-align: center;
     padding: .5em 1em;
     border-radius: 1000px;
     margin: 0 .2em;
     border: none;
     cursor: pointer;
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 .popup .button-container a:first-of-type {
@@ -457,6 +466,10 @@ form button {
     max-width: 90%;
     transition: ease border .25s;
     border: 5px solid var(--color-accent);
+}
+
+form button > * {
+    margin: auto;
 }
 
 form button:hover,
