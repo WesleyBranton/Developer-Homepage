@@ -136,7 +136,8 @@ section > p {
     font-weight: bold;
 }
 
-.project-desc a:hover {
+.project-desc a:hover,
+.project-desc a:focus {
     background-size: 100% 100%;
     color: black;
 }
@@ -157,7 +158,8 @@ nav a {
     font-weight: bold;
 }
 
-nav a:hover {
+nav a:hover,
+nav a:focus {
     color: var(--color-accent);
     border-bottom: var(--nav-border-width) solid var(--color-accent);
 }
@@ -353,8 +355,12 @@ header .wrapper h2 {
     cursor: pointer;
     padding-right: 24px;
     border: none;
-    border-bottom: 2px solid var(--color-accent);
+    border-bottom: 5px solid var(--color-dark);
     font-size: 100%;
+}
+
+#project-show:focus {
+    border-bottom: 5px solid var(--color-accent);
 }
 
 header {
@@ -388,7 +394,8 @@ header .bottom {
     cursor: pointer;
 }
 
-#closePopup:hover {
+#closePopup:hover,
+#closePopup:focus {
     color: red;
 }
 
@@ -399,6 +406,11 @@ header .bottom {
 form input,
 form textarea {
     border: 2px solid var(--color-dark);
+}
+
+form input:focus,
+form textarea:focus {
+    border: 2px solid var(--color-accent);
 }
 
 form label,
@@ -443,6 +455,13 @@ form button {
     font-size: 100%;
     width: 150pt;
     max-width: 90%;
+    transition: ease border .25s;
+    border: 5px solid var(--color-accent);
+}
+
+form button:hover,
+form button:focus {
+    border: 5px solid var(--color-dark);
 }
 
 form button:enabled #minispinner,
@@ -503,8 +522,14 @@ form .g-recaptcha {
 
 #social img {
     transition: .2s ease all;
+    filter:brightness(0%);
 }
 
-#social img:not(:hover) {
-    filter: brightness(0%);
+#social img:hover,
+#social a:focus img {
+    filter: brightness(100%);
+}
+
+#social a:focus {
+    border-bottom: 5px solid var(--color-accent);
 }
