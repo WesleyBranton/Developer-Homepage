@@ -41,6 +41,10 @@ function createPopup(request) {
     popup.getElementsByClassName('title')[0].textContent = info.title;
     popup.getElementsByClassName('description')[0].textContent = info.description;
 
+    // Change tabindex
+    updateFocus(true);
+    document.getElementById('closePopup').setAttribute('tabindex', 1);
+
     // Add link button(s)
     const buttonContainer = popup.getElementsByClassName('button-container')[0];
     buttonContainer.textContent = '';
@@ -50,6 +54,7 @@ function createPopup(request) {
         link.textContent = info.links[i].title;
         link.href = info.links[i].url;
         link.target = '_blank';
+        link.setAttribute('tabindex', i + 2);
         buttonContainer.appendChild(link);
         i++;
     }
@@ -76,6 +81,29 @@ function createPopup(request) {
 function closePopup() {
     const popup = document.getElementById('popup');
     popup.style.display = 'none';
+
+    // Clear elements
+    popup.getElementsByClassName('title')[0].textContent = "";
+    popup.getElementsByClassName('description')[0].textContent = "";
+    popup.getElementsByClassName('image-container')[0].textContent = "";
+    popup.getElementsByClassName('button-container')[0].textContent = "";
+
+    // Change tabindex
+    updateFocus(false);
+    document.getElementById('closePopup').setAttribute('tabindex', -1);
+}
+
+/**
+ * Makes only the popup focusable when it's open
+ * @param {boolean} isPopupOpen 
+ */
+function updateFocus(isPopupOpen) {
+    const elements = document.querySelectorAll('a, input, textarea, button, iframe');
+    if (isPopupOpen) {
+        for (e of elements) e.setAttribute('tabindex', -1);
+    } else {
+        for (e of elements) e.removeAttribute('tabindex');
+    }
 }
 
 /**
