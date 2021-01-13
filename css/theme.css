@@ -213,12 +213,13 @@ footer p {
     overflow-y: auto;
     overflow-x: hidden;
     margin: var(--popup-margin) auto var(--popup-margin) auto;
-    padding: 0 1em 1em 1em;
+    padding: 0 1em;;
     box-sizing: border-box;
 }
 
 .popup .button-container {
     text-align: right;
+    margin-bottom: 1em;
 }
 
 .popup .button-container a,
@@ -430,6 +431,9 @@ header .bottom {
     text-align: right;
     margin-bottom: 1em;
     margin-right: -1em;
+    position: sticky;
+    top: 0;
+    background: white;
 }
 
 form input,
