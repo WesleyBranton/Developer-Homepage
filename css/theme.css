@@ -237,6 +237,15 @@ form button {
     min-height: 44px;
     align-items: center;
     box-sizing: border-box;
+    transition: ease border .25s;
+    border: 5px solid var(--color-accent);
+}
+
+.popup .button-container a:hover,
+.popup .button-container a:focus,
+form button:hover,
+form button:focus {
+    border: 5px solid var(--color-dark);
 }
 
 .popup .button-container a:first-of-type {
@@ -475,17 +484,10 @@ form button {
     font-size: 100%;
     width: 150pt;
     max-width: 90%;
-    transition: ease border .25s;
-    border: 5px solid var(--color-accent);
 }
 
 form button > * {
     margin: auto;
-}
-
-form button:hover,
-form button:focus {
-    border: 5px solid var(--color-dark);
 }
 
 form button:enabled #minispinner,
