@@ -82,6 +82,7 @@ section > p {
     background-position: center;
     background-repeat: no-repeat;
     transition: ease all .5s;
+    position: relative;
 }
 
 #project-list > li:hover,
@@ -103,11 +104,16 @@ section > p {
     justify-content: center;
     flex-direction: column;
     color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
 }
 
 #project-list > li:hover .project-desc,
 #project-list > li.expand .project-desc {
     height: 100%;
+    opacity: 1;
 }
 
 .project-desc h3 {
