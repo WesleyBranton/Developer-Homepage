@@ -36,6 +36,7 @@ body {
     padding: 0;
     font-family: sans-serif;
     font-size: 14pt;
+    line-height: 1.5;
 }
 
 body.popup-open {
@@ -55,7 +56,6 @@ section > p {
 }
 
 section > p {
-    line-height: 1.5;
     width: 90%;
     max-width: 800px;
     text-align: left;
