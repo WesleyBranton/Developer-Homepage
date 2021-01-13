@@ -160,6 +160,7 @@ nav {
     background: var(--color-dark);
     position: sticky;
     top: 0;
+    z-index: 1;
 }
 
 nav a {
