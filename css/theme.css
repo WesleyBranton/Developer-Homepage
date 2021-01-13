@@ -38,6 +38,10 @@ body {
     font-size: 14pt;
 }
 
+body.popup-open {
+    overflow: hidden !important;
+}
+
 section > h2 {
     text-align: center;
 }

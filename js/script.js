@@ -71,6 +71,7 @@ function createPopup(request) {
     }
 
     // Display popup
+    document.body.classList.add('popup-open');
     popup.className = 'done';
     return false;
 }
@@ -81,6 +82,7 @@ function createPopup(request) {
 function closePopup() {
     const popup = document.getElementById('popup');
     popup.style.display = 'none';
+    document.body.classList.remove('popup-open');
 
     // Clear elements
     popup.getElementsByClassName('title')[0].textContent = "";
