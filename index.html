@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Wesley Branton</title>
         <meta charset="utf-8">
@@ -32,7 +32,7 @@
     <body>
         <!-- Page header -->
         <header>
-            <video autoplay muted loop>
+            <video autoplay muted loop tabindex="-1">
                 <source src="img/background.mp4" type="video/mp4">
                 Your browser does not support HTML5 video.
             </video>
@@ -59,8 +59,8 @@
         </nav>
 
         <!-- About section -->
-        <section id="about">
-            <h2>About Me</h2>
+        <section id="about" aria-labelledby="about-header">
+            <h2 id="about-header">About Me</h2>
             <p>I am a Canadian developer with a degree in Computer Science and a diploma in Computer Networking. I have more than 5 years of experience in computer programming, primarily in web and mobile application development. I'm involved in a number of both self-managed and community-managed projects ranging from browser add-ons, websites, mobile apps and games.</p>
             <ul id="social">
                 <li id="github">
@@ -102,8 +102,8 @@
         </section>
 
         <!-- Project section -->
-        <section id="projects">
-            <h2>My Projects</h2>
+        <section id="projects" aria-labelledby="projects-header">
+            <h2 id="projects-header">My Projects</h2>
             <h3>Here are a few projects I've worked on.</h3>
 
             <!-- Project filter options -->
@@ -121,7 +121,7 @@
             <!-- Project list -->
             <ul class="all" id="project-list">
 
-                <li class="addon" id="customscrollbars" style="background-image: url(img/thumbnail/customscrollbars.png); background-color: #FFC299;">
+                <li class="addon" id="customscrollbars" style="background-image: url(img/thumbnail/customscrollbars.png); background-color: #FFE99E;">
                     <div class="project-desc">
                         <h3>Custom Scrollbars</h3>
                         <h4>Firefox Add-on</h4>
@@ -277,8 +277,8 @@
         </section>
 
         <!-- Contact page -->
-        <section id="contact">
-            <h2>Contact Me</h2>
+        <section id="contact" aria-labelledby="contact-header">
+            <h2 id="contact-header">Contact Me</h2>
             <form id="form-contact" action="https://send.wesleybranton.com/send.php" method="POST">
                 <div>
                     <label>Name:</label>
@@ -322,11 +322,11 @@
             <!-- Popup -->
             <div class="popup">
                 <section class="toolbar">
-                    <button id="closePopup">&times;</button>
+                    <button id="closePopup" tabindex="-1" title="Close" aria-label="Close popup">&times;</button>
                 </section>
                 <section class="image-container"></section>
-                <h2 class="title">Title here</h2>
-                <p class="description">Information here</p>
+                <h2 class="title"></h2>
+                <p class="description"></p>
                 <div class="button-container"></div>
             </div>
 

@@ -36,6 +36,11 @@ body {
     padding: 0;
     font-family: sans-serif;
     font-size: 14pt;
+    line-height: 1.5;
+}
+
+body.popup-open {
+    overflow: hidden !important;
 }
 
 section > h2 {
@@ -51,7 +56,6 @@ section > p {
 }
 
 section > p {
-    line-height: 1.5;
     width: 90%;
     max-width: 800px;
     text-align: left;
@@ -82,9 +86,11 @@ section > p {
     background-position: center;
     background-repeat: no-repeat;
     transition: ease all .5s;
+    position: relative;
 }
 
-#project-list > li:hover {
+#project-list > li:hover,
+#project-list > li.expand {
     background-size: 200px;
 }
 
@@ -102,10 +108,16 @@ section > p {
     justify-content: center;
     flex-direction: column;
     color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
 }
 
-#project-list > li:hover .project-desc {
+#project-list > li:hover .project-desc,
+#project-list > li.expand .project-desc {
     height: 100%;
+    opacity: 1;
 }
 
 .project-desc h3 {
@@ -132,9 +144,14 @@ section > p {
     background-size: 0 100%;
     background-image: url(../img/button-bg.jpg);
     font-weight: bold;
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    box-sizing: border-box;
 }
 
-.project-desc a:hover {
+.project-desc a:hover,
+.project-desc a:focus {
     background-size: 100% 100%;
     color: black;
 }
@@ -143,6 +160,7 @@ nav {
     background: var(--color-dark);
     position: sticky;
     top: 0;
+    z-index: 1;
 }
 
 nav a {
@@ -155,17 +173,14 @@ nav a {
     font-weight: bold;
 }
 
-nav a:hover {
+nav a:hover,
+nav a:focus {
     color: var(--color-accent);
     border-bottom: var(--nav-border-width) solid var(--color-accent);
 }
 
 nav a:first-of-type {
     margin-left: 4em;
-}
-
-header {
-    height: 100vh;
 }
 
 footer {
@@ -203,12 +218,13 @@ footer p {
     overflow-y: auto;
     overflow-x: hidden;
     margin: var(--popup-margin) auto var(--popup-margin) auto;
-    padding: 1em;
+    padding: 0 1em;;
     box-sizing: border-box;
 }
 
 .popup .button-container {
     text-align: right;
+    margin-bottom: 1em;
 }
 
 .popup .button-container a,
@@ -217,11 +233,25 @@ form button {
     font-weight: bold;
     background: var(--color-accent);
     text-decoration: none;
+    text-align: center;
     padding: .5em 1em;
     border-radius: 1000px;
     margin: 0 .2em;
     border: none;
     cursor: pointer;
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    box-sizing: border-box;
+    transition: ease border .25s;
+    border: 5px solid var(--color-accent);
+}
+
+.popup .button-container a:hover,
+.popup .button-container a:focus,
+form button:hover,
+form button:focus {
+    border: 5px solid var(--color-dark);
 }
 
 .popup .button-container a:first-of-type {
@@ -287,6 +317,7 @@ header .wrapper .profile img {
 header {
     overflow: hidden;
     position: relative;
+    height: 100vh;
 }
 
 header video {
@@ -309,6 +340,7 @@ header .wrapper {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, .4);
+    background-size: cover;
 }
 
 header .wrapper .profile {
@@ -351,8 +383,12 @@ header .wrapper h2 {
     cursor: pointer;
     padding-right: 24px;
     border: none;
-    border-bottom: 2px solid var(--color-accent);
+    border-bottom: 5px solid var(--color-dark);
     font-size: 100%;
+}
+
+#project-show:focus {
+    border-bottom: 5px solid var(--color-accent);
 }
 
 header {
@@ -362,6 +398,7 @@ header {
 header .bottom {
     position: absolute;
     left: 0;
+    bottom: 1em;
     background-image: var(--down-icon);
     background-position: center;
     background-size: contain;
@@ -378,25 +415,40 @@ header .bottom {
 }
 
 #closePopup {
-    color: var(--color-light);
+    color: red;
     font-weight: bold;
     font-size: 150%;
     border: none;
     background: none;
     cursor: pointer;
+    min-width: 44px;
+    min-height: 44px;
+    box-sizing: border-box;
 }
 
-#closePopup:hover {
-    color: red;
+#closePopup:hover,
+#closePopup:focus {
+    color: var(--color-white);
+    background: red;
 }
 
 .toolbar {
     text-align: right;
+    margin-bottom: 1em;
+    margin-right: -1em;
+    position: sticky;
+    top: 0;
+    background: white;
 }
 
 form input,
 form textarea {
     border: 2px solid var(--color-dark);
+}
+
+form input:focus,
+form textarea:focus {
+    border: 2px solid var(--color-accent);
 }
 
 form label,
@@ -441,6 +493,10 @@ form button {
     font-size: 100%;
     width: 150pt;
     max-width: 90%;
+}
+
+form button > * {
+    margin: auto;
 }
 
 form button:enabled #minispinner,
@@ -501,8 +557,34 @@ form .g-recaptcha {
 
 #social img {
     transition: .2s ease all;
+    filter:brightness(0%);
 }
 
-#social img:not(:hover) {
-    filter: brightness(0%);
+#social img:hover,
+#social a:focus img {
+    filter: brightness(100%);
+}
+
+#social a:focus {
+    border-bottom: 5px solid var(--color-accent);
+}
+
+@media (prefers-reduced-motion) {
+    header .bottom {
+        animation: none !important;
+    }
+
+    header video {
+        display: none !important;
+    }
+
+    header .wrapper {
+        background-image: url(../img/background.jpg) !important;
+    }
+
+    #project-list > li .project-desc,
+    #project-list > li,
+    .project-desc a {
+        transition: none !important;
+    }
 }
