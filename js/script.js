@@ -176,6 +176,13 @@ function collapseProject(event) {
     event.target.parentNode.parentNode.classList.remove('expand');
 }
 
+/**
+ * Update copyright year
+ */
+function updateCopyrightYear() {
+    document.getElementById('copyright-year').textContent = new Date().getFullYear();
+}
+
 // Add event listeners
 document.getElementById('project-show').value = 'all';
 document.getElementById('project-show').addEventListener('change', updateProjects);
@@ -190,3 +197,4 @@ for (l of projectLinks) {
     l.addEventListener('focus', expandProject);
     l.addEventListener('blur', collapseProject);
 }
+updateCopyrightYear();
